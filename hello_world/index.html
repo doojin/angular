@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="helloWorld">
+<head>
+    <title>Hello, world</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="DefaultController">
+        <input ng-model="person.name" type="text" placeholder="Your Name">
+        <h1>Hello, {{ person.name }}</h1>
+    </div>
+
+    <script>
+        var helloWorldModule = angular.module('helloWorld', []);
+
+        helloWorldModule.controller('DefaultController', function($scope){
+            // console.log('Controller loaded..');
+        });
+    </script>
+</body>
+</html>
