@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="filters">
+<head>
+    <title>Filters Example</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="FiltersController">
+        <table cellspacing="0" cellpadding="5">
+            <tr>
+                <td>Uppercase:</td>
+                <td>{{ name | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>Number:</td>
+                <td>{{ number | number:2 }}</td>
+            </tr>
+            <tr>
+                <td>Balance:</td>
+                <td>{{ balanceAmt | currency }}</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>{{ today | date: 'fullDate' }}</td>
+            </tr>
+            <tr>
+                <td>Date, Custom Format:</td>
+                <td>{{ today | date: 'dd.MM.yyyy' }}</td>
+            </tr>
+            <tr>
+                <td>Filter Names (Contains Letter 'a'):</td>
+                <td>{{ names | filter: 'a' }}</td>
+            </tr>
+            <tr>
+                <td>People Filtered By Name (Contains Letter 'i'):</td>
+                <td>{{ people | filter: {name: 'i'} }}</td>
+            </tr>
+            <tr>
+                <td>JSON:</td>
+                <td>{{ people | json }}</td>
+            </tr>
+            <tr>
+                <td>First 3 People:</td>
+                <td>{{ people | limitTo: 3 }}</td>
+            </tr>
+            <tr>
+                <td>Last 3 People:</td>
+                <td>{{ people | limitTo: -3 }}</td>
+            </tr>
+            <tr>
+                <td>People Ordered By Name:</td>
+                <td>{{ people | orderBy: 'name' }}</td>
+            </tr>
+            <tr>
+                <td>People Ordered By Second Letter in The Name:</td>
+                <td>{{ people | orderBy: secondLetter }}</td>
+            </tr>
+            <tr>
+                <td>First Letter Capital:</td>
+                <td>{{ 'some text' | cap }}</td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
